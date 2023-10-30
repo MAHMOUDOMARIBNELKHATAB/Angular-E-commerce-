@@ -1,0 +1,38 @@
+<div class="allcards">
+  <div class="card " *ngFor="let card of AllCards">
+    <div class="group-btn">
+      <div *ngIf="card.stock >0; then thenBlocks else elseBlocks"></div>
+      <ng-template #thenBlocks> <button type="text" class="btn btn-success">
+          In stock</button>
+      </ng-template>
+      <ng-template #elseBlocks><button type="text" class="btn btn-danger ">
+          Out of stock</button> </ng-template>
+
+    </div>
+    <a [routerLink]="['Product-details',card.id]" (click)="redirectToDetails(card.id)">
+      <img [src]="card.thumbnail" class="card-img-top">
+
+    </a>
+      <div class="card-body">
+        <div class="price">
+          <h5 class="card-title">{{card.title}}</h5>
+          <span> <sup>EGP</sup> {{card.price}} <sup>00</sup>
+
+          </span>
+        </div>
+        <p class="card-text">{{card.description}}</p>
+
+        <!-- <a href="#" class="btn btn-primary" [disabled]="card.stock <=0" >Add to cart</a> -->
+        
+        <div *ngIf="card.stock >0; then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock>
+          <a href="#" class="btn btn-primary" (click)="addToCard(card)" >Add to cart</a>
+        </ng-template>
+        <ng-template #elseBlock>
+          <a href="#" class="btn btn-secondary " disabled>Add to cart</a>
+        </ng-template>
+      </div>
+</div>
+
+</div>
+

@@ -1,0 +1,29 @@
+.navlink {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icon {
+    display: flex;
+    align-items: baseline;
+    width: 100%;
+
+}
+
+.navbar-collapse {
+    flex-grow: 0 !important;
+}
+
+.nav-item {
+    margin: 0 10px;
+}
+
+.fa-solid {
+    color: black;
+}
+
+.badge{
+    top:20px;
+    right : 95px;
+}

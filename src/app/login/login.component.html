@@ -1,0 +1,53 @@
+<p>login works!</p>
+
+<div class="login-box">
+  <h2>Login</h2>
+  <form #myForm="ngForm" (ngSubmit)="handlesubmit(myForm)">
+    <div class="user-box">
+      <input type="email" ngModel #email="ngModel" required  name="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9]+.[a-zA-Z]{2,4}">
+      <label>Email</label>
+    </div>
+    <div
+      *ngIf="email.touched && email.invalid">
+      <div *ngIf="email.errors && email.errors['required']">
+        <span class="text-danger ">
+          Email is required.
+        </span>
+      </div>
+      <div *ngIf="email.errors && email.errors['pattern']"  >
+        
+        <span class="text-danger ">
+          Invalid email format.
+        </span>
+
+      </div>
+
+    </div>
+    <div class="user-box">
+      <input  ngModel type="password" name="password" required ngModel #password="ngModel"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"  >
+      <label>Password</label>
+    </div>
+    <div
+    *ngIf="password.touched && password.invalid">
+    <div *ngIf="password.errors && password.errors['required']">
+      <span class="text-danger ">
+        password is required.
+      </span>
+    </div>
+    <div *ngIf="password.errors && password.errors['pattern']"  >
+      <span class="text-danger ">
+        Invalid password format.
+      </span>
+    </div>
+
+  </div>
+    <button type="submit" [disabled]="myForm.invalid">Login</button>
+
+  </form>
+  <p>
+    Don't have account ?
+
+    <a routerLink="Signup">Register
+    </a>
+  </p>
+</div>

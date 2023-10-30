@@ -1,0 +1,54 @@
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    position: relative;
+    border: none;
+}
+
+.card .group-btn {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+
+}
+
+.card img {
+    width: 40%;
+
+
+}
+.card-body{
+    width: 40%;
+}
+
+.price {
+    width: 80%;
+    height: 60vh;
+
+}
+
+.price .card-title {
+    font-size: 33px;
+    margin-bottom: 20px;
+
+}
+.card-rate{
+    font-size:23px;
+    margin-bottom: 20px;
+    color: green;
+
+}
+
+.price span {
+    font-size: 23px;
+    margin-bottom: 30px;
+
+}
+.price p {
+    font-size: 23px;
+    margin-bottom: 20px;
+
+}

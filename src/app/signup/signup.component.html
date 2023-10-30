@@ -1,0 +1,51 @@
+<div class="main">  	
+        <div class="signup">
+            <form [formGroup]="myForm" (ngSubmit)="handleFormSubmit()">
+                <label for="chk" aria-hidden="true">Sign up</label>
+                <input type="text"  name="name" placeholder="name" formControlName="Name">
+                <div *ngIf="myForm.controls['Name'].touched && myForm.controls['Name'].invalid">
+                <span class="text-danger "  *ngIf="myForm.controls['Name'].errors && myForm.controls['Name'].errors['required']">
+                    Name is required.
+                </span>
+                <span class="text-danger " *ngIf="myForm.controls['Name'].errors && myForm.controls['Name'].errors['minlength']"  >
+                    Minimum length is 3 characters
+                </span>
+              </div>
+                <input type="text"  name="txt"  placeholder="User name"  formControlName="userName">
+
+                <div *ngIf="myForm.controls['userName'].touched && myForm.controls['userName'].invalid">
+                  <span class="text-danger "  *ngIf="myForm.controls['userName'].errors && myForm.controls['userName'].errors['required']">
+                    userName is required.
+                  </span>
+                  <span class="text-danger "  *ngIf="myForm.controls['userName'].errors && myForm.controls['userName'].errors?.['minlength']">
+                      Minimum length is 3 characters
+                  </span>
+                </div>
+
+                <input  type="email"  name="email"  placeholder="Email"   formControlName="Email">
+                <div *ngIf="myForm.controls['Email'].touched && myForm.controls['Email'].invalid">
+                  <span class="text-danger "  *ngIf="myForm.controls['Email'].errors && myForm.controls['Email'].errors['required']">
+                    Email is required.
+                  </span>
+                  <span  class="text-danger "  *ngIf="myForm.controls['Email'].errors && myForm.controls['Email'].errors?.['pattern']">
+                    Invalid email format.
+                  </span>
+                </div>
+
+                <input type="password"  name="pswd"  placeholder="Password"  formControlName="Password">
+
+                <div *ngIf="myForm.controls['Password'].touched && myForm.controls['Password'].invalid">
+                  <span class="text-danger "  *ngIf="myForm.controls['Password'].errors && myForm.controls['Password'].errors['required']">
+                    password is required.
+                  </span>
+                  <span class="text-danger "  *ngIf="myForm.controls['Password'].errors && myForm.controls['Password'].errors?.['pattern']">
+                    Invalid password format.
+                  </span>
+                </div>
+
+                <button type="submit" [disabled]="myForm.invalid">Sign up</button>
+            </form>
+        </div>
+
+      
+</div>

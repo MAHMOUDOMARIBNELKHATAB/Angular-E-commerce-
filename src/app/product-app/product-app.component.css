@@ -1,0 +1,57 @@
+.allcards{
+    display:flex ;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card{
+    width: 30%;
+    margin-bottom: 40px;
+    height: 490px;
+}
+.card p {
+ height: 85px;
+ position: relative;
+}
+.group-btn{
+    position: absolute;
+    top: 6px;
+    left: 10px;
+}
+.group-btn button{
+  border-radius: 30px;
+  padding: 1px 13px  !important;
+  font-size: 12px;
+  
+}
+.price{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+span {
+    font-size: 20px;
+    font-weight: 500;
+}
+span sup {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+
+img{
+    height: 250px;
+}
+
+ul{
+    margin-top: 60px;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-body a {
+    border-radius: 15px;
+}
+
+

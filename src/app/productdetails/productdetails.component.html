@@ -1,0 +1,45 @@
+<!-- <div class="card" style="width: 18rem;">
+    <img class="card-img-top" [src]="details.thumbnail" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{details.title}}</h5>
+      <p class="card-text">{{details.description}}</p>
+      <a href="#" class="btn btn-primary">Add to cart</a>
+    </div>
+  </div> -->
+
+<div class="allcards">
+    <div class="card ">
+        <div class="group-btn">
+            <div *ngIf="details.stock >0; then thenBlocks else elseBlocks"></div>
+            <ng-template #thenBlocks> <button type="text" class="btn btn-success">
+                    In stock</button>
+            </ng-template>
+            <ng-template #elseBlocks><button type="text" class="btn btn-danger ">
+                    Out of stock</button> </ng-template>
+
+        </div>
+        <img [src]="details.thumbnail" class="card-img-top">
+
+        <div class="card-body">
+            <div class="price">
+                <h5 class="card-title">{{details.title}}</h5>
+                <span> <sup>EGP</sup> {{details.price}} <sup>00</sup>
+
+                </span>
+                <h5 class="card-rate"> rate ( {{details.rating}})</h5>
+
+                <p class="card-text">{{details.description}}</p>
+                <p class="card-text">{{details.brand}}</p>
+                <p class="card-text">{{details.category}}</p>
+            </div>
+            <div *ngIf="details.stock >0; then thenBlock else elseBlock"></div>
+            <ng-template #thenBlock>
+                <a href="#" class="btn btn-primary">Add to cart</a>
+            </ng-template>
+            <ng-template #elseBlock>
+                <a href="#" class="btn btn-secondary " disabled>Add to cart</a>
+            </ng-template>
+        </div>
+    </div>
+
+</div>

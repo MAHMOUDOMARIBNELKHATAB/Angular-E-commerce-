@@ -1,0 +1,20 @@
+
+
+
+
+
+
+
+
+<div class="card" id="cards" *ngFor="let c of cartService.productsInCart; let i=index">
+  <div>
+    <img [src]="c.card.thumbnail" class="card-img-top" >
+  </div>
+      <h5 class="card-title">{{c.card.title}}</h5>
+      <div class="d-flex align-items-center">
+        <button class="btn btn-danger" (click)="decreaseCounter(c.quantity)">-</button>
+        <h4 class="mx-4 mb-0">{{c.quantity}}</h4>
+        <button class="btn btn-success" (click)="increaseCounter(c.quantity)">+</button>
+    </div>
+    <button (click)="removeProduct(i) " class="btn  btn-danger "><i class="fa-regular fa-circle-xmark"></i></button>
+  </div>
